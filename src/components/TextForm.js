@@ -1,6 +1,17 @@
 import React, { useState } from 'react'
+// import axios from "axios";
 
 const TextForm = (props) => {
+
+
+    // const fetchCoins = async () => {
+    //     const { data } = await axios.get(
+    //     'http://127.0.0.1:8000/api/vendors/'
+    //     );
+    //     console.log(data);
+    //     // setObj(data);
+    //   };
+
 
     const handleCopy = () => {
         var text = document.getElementById("myBox");
@@ -29,6 +40,7 @@ const TextForm = (props) => {
     }
 
     const [text, setText] = useState("");
+
     return (
         <>
             <div className='container' style={{backgroundColor : props.mode==='dark'?'#28282B':'white',color : props.mode==='dark'?'white':'#28282B'}}>
@@ -40,6 +52,7 @@ const TextForm = (props) => {
                 <button className="btn btn-primary mx-2" onClick={handleLowerClick}>Convert to Lowercase</button>
                 <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear All</button>
                 <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy</button>
+                {/* <button className="btn btn-primary mx-2" onClick={fetchCoins}>Fetch</button> */}
             </div>
             <div className="container my-3" style={{backgroundColor : props.mode==='dark'?'#28282B':'white',color : props.mode==='dark'?'white':'#28282B'}}>
                 <h2>Text Summary</h2>
