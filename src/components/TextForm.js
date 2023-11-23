@@ -48,15 +48,15 @@ const TextForm = (props) => {
                     <h1>{props.mainHeading}</h1>
                     <textarea className="form-control" style={{backgroundColor : props.mode==='dark'?'#28282B':'white',color : props.mode==='dark'?'white':'#28282B'}} value={text} onChange={handleOnChange} id="myBox" rows="10"></textarea>
                 </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpperClick}>Convert to Uppercase</button>
-                <button className="btn btn-primary mx-2" onClick={handleLowerClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear All</button>
-                <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleUpperClick}>Convert to Uppercase</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleLowerClick}>Convert to Lowercase</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear All</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy</button>
                 {/* <button className="btn btn-primary mx-2" onClick={fetchCoins}>Fetch</button> */}
             </div>
             <div className="container my-3" style={{backgroundColor : props.mode==='dark'?'#28282B':'white',color : props.mode==='dark'?'white':'#28282B'}}>
                 <h2>Text Summary</h2>
-                <p> {text.length > 0 ? `${text.split(" ").length} words and ${text.length} characters` :"Enter something in the text area to get summary"}</p>
+                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
                 <h2>Preview</h2>
                 <p>{text.length>0?text:"Enter something in the text area to get preview"}</p>
             </div>
